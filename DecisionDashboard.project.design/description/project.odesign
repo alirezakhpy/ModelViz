@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="project" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DecisionDashboard Diagram" initialisation="true" domainClass="decisionDashboardMetaModel::Dashboard">
+      <metamodel href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Dashboard" domainClass="decisionDashboardMetaModel::Dashboard">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" width="20" height="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <toolSections documentation="Tools to create the dashboard view" name="Dashboard Creation Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drag and drop to canvas to create a visualization frame" name="Create New Visualization Frame" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::Visualization" referenceName="visualization">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Visual-'+container.eAllContents()->filter(decisionDashboardMetaModel::Visualization)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="vatask" valueExpression="var:source"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drop a chart to a visualization frame" name="Create New Chart" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Mark']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::Mark" referenceName="mark"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drop a data source to a visualization frame" name="Create New Data Source" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Data']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::Data" referenceName="data">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="Source" valueExpression="Insert Link"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Define variables to be used as chart axis (x &amp; y)" name="Add Encoding" label="Add Visual Encoding" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Mark']/@borderedNodeMappings[name='VisualEncoding']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::channelType" referenceName="encoding">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="channelType" valueExpression="var: instance"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Values" label="Add Data Values" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Data']/@borderedNodeMappings[name='DataValues']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::Values" referenceName="values"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections documentation="Relation tools" name="Relation Creation Tools">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" documentation="Connect the decision area to a visualization frame" name="DecisionAreaRelation" label="Decision Area ——> Visualization" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@edgeMappings[name='DecisionAreaEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="visualization" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" documentation="Connect a data source to a chart" name="DataSourceConnect" label="Data Source ---> Chart" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@edgeMappings[name='DataEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:Source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mark" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteDataRelation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.oclAsType(DEdge).sourceNode.oclAsType(DSemanticDecorator).target/]">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="mark" elementExpression="[elementView.oclAsType(DEdge).targetNode.oclAsType(DSemanticDecorator).target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteDecisionrelation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.oclAsType(DEdge).sourceNode.oclAsType(DSemanticDecorator).target/]">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="visualization" elementExpression="[elementView.oclAsType(DEdge).targetNode.oclAsType(DSemanticDecorator).target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" documentation="Connect the decision area to a mark" name="TaskChartRelation" label="Visualization Task ——> Chart" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@edgeMappings[name='TaskChartAreaEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mark" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="vatask" valueExpression="var:source"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteChartRelation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[elementView.oclAsType(DEdge).sourceNode.oclAsType(DSemanticDecorator).target/]">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="mark" elementExpression="[elementView.oclAsType(DEdge).targetNode.oclAsType(DSemanticDecorator).target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections documentation="Tools to create decision making path" name="Decision Support Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drag and drop a decision area to start decision-making path" name="Create A Decision Area" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@nodeMappings[name='DecisionArea']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::DecisionArea" referenceName="decisionarea">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="Dtype"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drop a visual analytic task to a goal block" name="Create A Visualization Task" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@nodeMappings[name='DecisionArea']/@borderedNodeMappings[name='VAG']/@borderedNodeMappings[name='VisTask']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::VATask" referenceName="vatask">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="visualization" valueExpression="aql:self.eContainer(decisionDashboardMetaModel::DecisionArea).visualization"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" documentation="Drop a visual analytic goal to a Decision Area block" name="Create A Visualization Goal" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@nodeMappings[name='DecisionArea']/@borderedNodeMappings[name='VAG']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::VisualizationGoal" referenceName="visualizationgoal">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goalType"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="AI Tools" label="Extra Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="what-if" label="Add" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='What-if']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var: container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="decisionDashboardMetaModel::MLModel" referenceName="mlmodel">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ModelType"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Decision-Area" activeByDefault="true" optional="false">
+        <nodeMappings name="DecisionArea" semanticCandidatesExpression="feature:decisionarea" domainClass="decisionDashboardMetaModel::DecisionArea">
+          <borderedNodeMappings name="VAG" semanticCandidatesExpression="feature:visualizationgoal" domainClass="decisionDashboardMetaModel::VisualizationGoal">
+            <borderedNodeMappings name="VisTask" semanticCandidatesExpression="feature:vatask" domainClass="decisionDashboardMetaModel::VATask">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: self.taskType.toString().substituteAll('_', ' ')" labelPosition="node" resizeKind="NSEW" width="40" height="6">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: self.goalType.toString().substituteAll('_', ' ')" labelPosition="node" resizeKind="NSEW" width="35" height="6">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql: self.Dtype.toString().substituteAll('_', ' ')" labelPosition="node" resizeKind="NSEW" width="20" height="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="DecisionAreaEdge" label="Decision Area ——> Visualization" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteDecisionrelation']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@nodeMappings[name='DecisionArea']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']" targetFinderExpression="feature:visualization">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TaskChartAreaEdge" label="Visualization Task ——> Chart" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteChartRelation']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Decision-Area']/@nodeMappings[name='DecisionArea']/@borderedNodeMappings[name='VAG']/@borderedNodeMappings[name='VisTask']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Mark']" targetFinderExpression="feature:mark">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Visualization" activeByDefault="true" optional="false">
+        <nodeMappings name="Visualization" semanticCandidatesExpression="feature:visualization" domainClass="decisionDashboardMetaModel::Visualization">
+          <borderedNodeMappings name="Mark" semanticCandidatesExpression="feature:mark" domainClass="decisionDashboardMetaModel::Mark">
+            <borderedNodeMappings name="VisualEncoding" semanticCandidatesExpression="feature:encoding" domainClass="decisionDashboardMetaModel::channelType">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:channelType" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </borderedNodeMappings>
+            <conditionnalStyles predicateExpression="aql:self.visualType.toString()='Bar'">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="feature:visualType" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/BarChart.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.visualType.toString()='Line'">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="feature:visualType" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/LineChart.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.visualType.toString()='Circle'">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="feature:visualType" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/Scatterplot.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.visualType.toString()='Square'">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="feature:visualType" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/squarePlot.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.visualType.toString()='Area'">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="3" labelSize="12" labelExpression="feature:visualType" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/StackedArea.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="Data" semanticCandidatesExpression="feature:data" documentation="Insert Link to data source" domainClass="decisionDashboardMetaModel::Data">
+            <borderedNodeMappings name="DataValues" semanticCandidatesExpression="feature:values" domainClass="decisionDashboardMetaModel::Values">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="Values" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="feature:type" sizeComputationExpression="10" resizeKind="NSEW" workspacePath="/DecisionDashboard.project.design/icons/Database.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="What-if" semanticCandidatesExpression="feature:mlmodel" domainClass="decisionDashboardMetaModel::MLModel">
+            <style xsi:type="style:SquareDescription" labelSize="11" labelExpression="feature:ModelType" labelPosition="node" resizeKind="NSEW" width="15" height="10">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="3" borderLineStyle="dash" labelSize="12" labelPosition="node" resizeKind="NSEW" width="60" height="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="DataEdge" label="Data Source ---> Chart" deletionDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteDataRelation']" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Data']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='DecisionDashboard%20Diagram']/@additionalLayers[name='Visualization']/@nodeMappings[name='Visualization']/@borderedNodeMappings[name='Mark']" targetFinderExpression="feature:mark">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="DecisionDashboard.project.design.Services"/>
+  </ownedViewpoints>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="sirius_default_rules_properties">
+    <categories name="Default">
+      <pages name="sirius_default_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <groups name="sirius_default_rules_defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_enum_if" predicateExpression="aql: false">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EAttribute) and eStructuralFeature.many">
+            <widget xsi:type="properties:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
+          </ifs>
+          <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+        <controls xsi:type="properties:DynamicMappingForDescription" name="Definedfor" iterator="eContextIterator" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs name="IfVAG" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::VisualizationGoal) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseVisualizationGoalType" documentation="Choose a visualization goal to pursue" labelExpression="Goal Types:" isEnabledExpression="aql: true" valueExpression="aql: self.goalType" candidatesExpression="aql: self.visualizationGoalSelect((self.eContainer(decisionDashboardMetaModel::DecisionArea)).Dtype)" candidateDisplayExpression="aql: candidate.toString().substituteAll('_', ' ').substituteAll('NextVersion', ' (Next Version)')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(decisionDashboardMetaModel::VisualizationGoal)">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="goalType" valueExpression="var:newValue"/>
+                </firstModelOperations>
+              </initialOperation>
+              <style>
+                <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+                <labelFontFormat>bold</labelFontFormat>
+              </style>
+            </widget>
+          </ifs>
+          <ifs name="IfVTask" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::VATask) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseTaskType" documentation="Choose a visual analytic task for the task block created" labelExpression="Task Types:" isEnabledExpression="aql: true" valueExpression="aql: self.taskType" candidatesExpression="aql: self.visualizationTaskSelect((self.eContainer(decisionDashboardMetaModel::VisualizationGoal)).goalType)" candidateDisplayExpression="aql: candidate.toString().substituteAll('_', ' ').substituteAll('NextVersion', ' (Next Version)')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(decisionDashboardMetaModel::VATask)">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="taskType" valueExpression="var:newValue"/>
+                </firstModelOperations>
+              </initialOperation>
+              <style>
+                <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+                <labelFontFormat>bold</labelFontFormat>
+              </style>
+            </widget>
+          </ifs>
+          <ifs name="IfVisual" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::Mark) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseVisualType" documentation="Choose a visual format for the created chart" labelExpression="Visual Type:" isEnabledExpression="aql: true" valueExpression="aql: self.visualType" candidatesExpression="aql: self.visualizationVisualSelect((self.eContainer(decisionDashboardMetaModel::VATask).taskType)" candidateDisplayExpression="aql: candidate.toString().substituteAll('_', ' ').substituteAll('NextVersion', ' (Next Version)')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(decisionDashboardMetaModel::Mark)">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="visualType" valueExpression="var:newValue"/>
+                </firstModelOperations>
+              </initialOperation>
+            </widget>
+          </ifs>
+          <ifs name="IfDA" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::DecisionArea) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseDecisionType" documentation="Choose a decision area for which you need decision support" labelExpression="Decision Area Types:" valueExpression="aql: eContextIterator.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eContextIterator.name).toString())" candidatesExpression="aql: decisionDashboardMetaModel::DecisionAreaList.eLiterals" candidateDisplayExpression="aql: candidate.name.toString().substituteAll('_', ' ').substituteAll('NextVersion', ' (Next Version)')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eContextIterator, newValue.instance)"/>
+              </initialOperation>
+              <style>
+                <labelBackgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+                <labelFontFormat>bold</labelFontFormat>
+              </style>
+            </widget>
+          </ifs>
+          <ifs name="IfData" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::Data) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseDataType" documentation="Insert the link to the data. The Link can either be from a local location starting with &quot;\&quot; or and online location" labelExpression="Data Source:" helpExpression="aql:input.emfEditServices(self).getDescription(eContextIterator)" valueExpression="aql: decisionDashboardMetaModel::DataTypeList.getEEnumLiteral(self.type.toString())" candidatesExpression="aql: decisionDashboardMetaModel::DataTypeList.eLiterals" candidateDisplayExpression="aql: candidate.name.toString().substituteAll('_', ' ')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer(decisionDashboardMetaModel::Data)">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="aql:newValue.instance"/>
+                </firstModelOperations>
+              </initialOperation>
+            </widget>
+          </ifs>
+          <ifs name="IfEncoding" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::Encoding) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseDetail" documentation="Add the name of the variable for the axix in the &quot;field&quot; section and choose type of the variable. The aggregate option provides a mean to transform the variable as needed." labelExpression="aql:input.emfEditServices(self).getText(eContextIterator)+':'" valueExpression="aql:eContextIterator.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eContextIterator.name).toString())" candidatesExpression="aql:eContextIterator.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eContextIterator, newValue.instance)"/>
+              </initialOperation>
+            </widget>
+          </ifs>
+          <ifs name="IfWhat-if" predicateExpression="aql: self.oclIsKindOf(decisionDashboardMetaModel::MLModel) and (eContextIterator.eType.oclIsKindOf(ecore::EEnum))">
+            <widget xsi:type="properties:RadioDescription" name="ChooseMLType" documentation="Insert the link to the data. The Link can either be from a local location starting with &quot;\&quot; or and online location" labelExpression="Machine Learning Model:" helpExpression="aql:input.emfEditServices(self).getDescription(eContextIterator)" valueExpression="aql: eContextIterator.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eContextIterator.name).toString())" candidatesExpression="aql: decisionDashboardMetaModel::ModelTypeList.eLiterals" candidateDisplayExpression="aql: candidate.name.toString().substituteAll('_', ' ')" numberOfColumns="1">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eContextIterator, newValue.instance)"/>
+              </initialOperation>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+    </categories>
+  </extensions>
+</description:Group>
