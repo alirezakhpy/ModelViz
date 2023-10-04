@@ -1,0 +1,132 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel')]
+
+
+[template public generateElement(aDashboard : decisionDashboardMetaModel::Dashboard)]
+[comment @main/]
+[for (c : Visualization | aDashboard.visualization)]
+[file (aDashboard.title.concat('/').concat(c.name).concat('.html'), false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+  <head>
+	<style>
+	body {
+	  max-width: 1000px;
+	  margin: auto;
+	  background-color: #292b45;
+	}
+	</style>
+    <img src="supply-chain-header.jpeg">
+    <title>Embedding Vega-Lite</title>
+	<script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  </head>
+  <body>
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var yourVlSpec = 
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "[aDashboard.description/]"[',' /]
+    "color": "darkred",
+    "align": "center",
+    "anchor": "middle",
+    "fontSize": 50,
+    "subtitle": "[aDashboard.title/]"[',' /]
+    "subtitleFontSize": 30,
+    "subtitlePadding": 20
+    },
+[if ((c.mark->size()>1))]
+    "columns": 2[',' /]
+	"concat": ['[' /]
+	[for (M : Mark | c.mark)]
+		{
+		[model2JSONSpecification(c,M)/]
+		},
+	[/for]
+	[']' /],"resolve": {"scale": {"color": "independent"}}
+	[else]
+		[for (M : Mark | c.mark)]
+			[model2JSONSpecification(c,M)/]
+		[/for]	
+[/if]
+
+};
+      vegaEmbed('#vis', yourVlSpec);
+    </script>
+  </body>
+</html>
+[/file]
+[/for]
+[/template]
+
+[template public model2JSONSpecification(c:Visualization, M:Mark)]
+
+"title": "[M.title/]"[',' /]
+"data": {
+"url": "[M.data.Source/]"
+} [',' /]
+"mark": {"type":"[M.visualType.toString().toLowerCase()/]"[',' /] "tooltip": true}[',' /]
+[for (E : channelType | M.encoding)]
+	[if (E.filterType.toString().equalsIgnoreCase('none'))]
+
+	[else]
+			"transform": ['[' /]
+			[for (E : channelType | M.encoding)]
+					[if (E.varibleName.toString().equalsIgnoreCase('Date'))]
+						{"timeUnit": "[E.timeUnit/]", "field": "[E.varibleName/]", "as": "[E.timeUnit/]"}[',' /]
+					[/if]
+			[/for]
+					{"aggregate": ['[' /]{"op": "[E.aggregateType/]", "field": "[E.varibleName/]", "as": "[E.varibleName/]"}[']' /][',' /]
+		            "groupby": ['[' /]
+					[for (E : channelType | M.encoding) separator (',')]
+						[if (E.varibleName.toString().equalsIgnoreCase('Date'))]
+							"[E.timeUnit/]"[',' /]
+							[else]
+								[if (E.filterType.toString().equalsIgnoreCase('none'))]
+									"[E.varibleName/]"
+								[/if]
+						[/if]
+					[/for]
+					[']' /]}[',' /]
+					{"filter":{"field": "[E.varibleName/]", "[E.filterType/]": [E.filterValue/]}}
+	[']' /][',' /]
+	[/if]
+[/for]
+
+"encoding": {
+[comment Loop through each channel/]
+[for (E : channelType | M.encoding)separator (',')]
+	[comment If there is no filter in each channel do nothing/]
+	[if (E.filterType.toString().equalsIgnoreCase('none'))]
+		[comment If there is a filter in one of the channels/]
+			[if (E.variableType.toString().equalsIgnoreCase('default'))]
+				"[E.channelType/]": {"timeUnit": "[E.timeUnit/]"[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.varibleName/]"}
+				[else]
+					"[E.channelType/]": {"timeUnit": "[E.timeUnit/]"[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.varibleName/]"[',' /] "type": "[E.variableType/]"}
+			[/if]
+		[else]
+			[for (E : channelType | M.encoding)separator (',')]
+				[if (E.varibleName.toString().equalsIgnoreCase('Date'))]
+					[comment Then do not write the timeunit here/]
+					[if (E.variableType.toString().equalsIgnoreCase('default'))]
+						"[E.channelType/]": {"timeUnit": ""[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.timeUnit/]", "axis": {"formatType": "time"}}
+						[else]
+							"[E.channelType/]": {"timeUnit": ""[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.varibleName/]"[',' /] "type": "[E.timeUnit/]", "axis": {"formatType": "time"}}
+					[/if]
+					[comment If it is not date, write it as it is/]			
+					[else]
+						[if (E.variableType.toString().equalsIgnoreCase('default'))]
+							"[E.channelType/]": {"timeUnit": "[E.timeUnit/]"[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.varibleName/]"}
+							[else]
+								"[E.channelType/]": {"timeUnit": "[E.timeUnit/]"[',' /] "aggregate": "[E.aggregateType/]"[',' /] "field": "[E.varibleName/]"[',' /] "type": "[E.variableType/]"}
+						[/if]
+					[/if]			
+			[/for]		
+	[/if]				
+[/for]
+}
+[/template]

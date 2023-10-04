@@ -1,0 +1,3121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generate" nsURI="DecisionDashboardToText01::main::generate" startHeaderPosition="29" endHeaderPosition="216">
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;!DOCTYPE html>&#xA;&lt;html>&#xA;  &lt;head>&#xA;&#x9;&lt;style>&#xA;&#x9;body {&#xA;&#x9;  max-width: 1000px;&#xA;&#x9;  margin: auto;&#xA;&#x9;  background-color: #292b45;&#xA;&#x9;}&#xA;&#x9;&lt;/style>&#xA;    &lt;img src=&quot;supply-chain-header.jpeg&quot;>&#xA;    &lt;title>Embedding Vega-Lite&lt;/title>&#xA;&#x9;&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega@5.22.1&quot;>&lt;/script>&#xA;&#x9;&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega-lite@5.6.0&quot;>&lt;/script>&#xA;&#x9;&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega-embed@6.21.0&quot;>&lt;/script>&#xA;  &lt;/head>&#xA;  &lt;body>&#xA;    &lt;div id=&quot;vis&quot;>&lt;/div>&#xA;&#xA;    &lt;script type=&quot;text/javascript&quot;>&#xA;      var yourVlSpec = &#xA;{&#xA;&quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v5.json&quot;,&#xA;  &quot;title&quot;: {&#xA;    &quot;text&quot;: &quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDashboard" referredVariable="/0/generateElement/aDashboard">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard/description"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;    &quot;color&quot;: &quot;darkred&quot;,&#xA;    &quot;align&quot;: &quot;center&quot;,&#xA;    &quot;anchor&quot;: &quot;middle&quot;,&#xA;    &quot;fontSize&quot;: 50,&#xA;    &quot;subtitle&quot;: &quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDashboard" referredVariable="/0/generateElement/aDashboard">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard/title"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;    &quot;subtitleFontSize&quot;: 30,&#xA;    &quot;subtitlePadding&quot;: 20&#xA;    },&#xA;"/>
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    &quot;columns&quot;: 2"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&quot;concat&quot;: "/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;{&#xA;&#x9;&#x9;"/>
+              <body xsi:type="mtl:TemplateInvocation" definition="/0/model2JSONSpecification">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                </argument>
+                <argument xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/generateElement/%/%/%.9/%.5/M">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;},&#xA;"/>
+              <loopVariable name="M">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Mark)">
+                <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization/mark"/>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&quot;resolve&quot;: {&quot;scale&quot;: {&quot;color&quot;: &quot;independent&quot;}}&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Mark)">
+                  <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization/mark"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/size"/>
+              </source>
+              <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/%3E"/>
+            </ifExpr>
+            <else>
+              <body xsi:type="mtl:ForBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;"/>
+                <body xsi:type="mtl:TemplateInvocation" definition="/0/model2JSONSpecification">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/generateElement/%/%/%.9/%.10/%/M">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                <loopVariable name="M">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                </loopVariable>
+                <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Mark)">
+                  <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization/mark"/>
+                </iterSet>
+              </body>
+            </else>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;};&#xA;      vegaEmbed('#vis', yourVlSpec);&#xA;    &lt;/script>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+          <fileUrl xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aDashboard" referredVariable="/0/generateElement/aDashboard">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard/title"/>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+              </source>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateElement/%/c">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization/name"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".html">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+          </fileUrl>
+          <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </charset>
+        </body>
+        <loopVariable name="c">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Visualization)">
+          <source xsi:type="ocl.ecore:VariableExp" name="aDashboard" referredVariable="/0/generateElement/aDashboard">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard/visualization"/>
+        </iterSet>
+      </body>
+      <parameter name="aDashboard">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="model2JSONSpecification" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&quot;title&quot;: &quot;"/>
+      <body xsi:type="ocl.ecore:PropertyCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+        </source>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/title"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&quot;data&quot;: {&#xA;&quot;url&quot;: &quot;"/>
+      <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+        <source xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Data)">
+          <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/data"/>
+        </source>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/model2JSONSpecification/collect/temp1">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Data"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Data/Source"/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Data"/>
+        </iterator>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;} "/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&quot;mark&quot;: {&quot;type&quot;:&quot;"/>
+      <body xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VisualFormatList"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/visualType"/>
+          </source>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLowerCase"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;tooltip&quot;: true}"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//FilterTypeList"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/filterType"/>
+              </source>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="none">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </ifExpr>
+          <else>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&quot;transform&quot;: "/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;timeUnit&quot;: &quot;"/>
+                <body xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.3/E">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;field&quot;: &quot;"/>
+                <body xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.3/E">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;as&quot;: &quot;"/>
+                <body xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.3/E">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}"/>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.3/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Date">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </ifExpr>
+              </body>
+              <loopVariable name="E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Encoding)">
+                <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/encoding"/>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;aggregate&quot;: "/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="{&quot;op&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;field&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;as&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;            &quot;groupby&quot;: "/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                <body xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.18/E">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.18/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Date">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </ifExpr>
+                <else>
+                  <body xsi:type="mtl:IfBlock">
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.18/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;"/>
+                    <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//FilterTypeList"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/%/%.2/%.18/E">
+                            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/filterType"/>
+                        </source>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="none">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                    </ifExpr>
+                  </body>
+                </else>
+              </body>
+              <loopVariable name="E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Encoding)">
+                <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/encoding"/>
+              </iterSet>
+              <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </each>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;{&quot;filter&quot;:{&quot;field&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//FilterTypeList"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/filterType"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.14/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/filterValue"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}}&#xA;&#x9;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          </else>
+        </body>
+        <loopVariable name="E">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Encoding)">
+          <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/encoding"/>
+        </iterSet>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&quot;encoding&quot;: {&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}&#xA;"/>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VariableTypeList"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/variableType"/>
+                </source>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="default">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </ifExpr>
+            <else>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;type&quot;: &quot;"/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VariableTypeList"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/variableType"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}&#xA;"/>
+            </else>
+          </body>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//FilterTypeList"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/E">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/filterType"/>
+              </source>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="none">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </ifExpr>
+          <else>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:IfBlock">
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;&quot;"/>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+                  <body xsi:type="ocl.ecore:PropertyCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                    </source>
+                    <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;axis&quot;: {&quot;formatType&quot;: &quot;time&quot;}}&#xA;"/>
+                  <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VariableTypeList"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/variableType"/>
+                      </source>
+                    </source>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="default">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                  </ifExpr>
+                  <else>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;&quot;"/>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;type&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, &quot;axis&quot;: {&quot;formatType&quot;: &quot;time&quot;}}&#xA;"/>
+                  </else>
+                </body>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <source xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toString"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Date">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </ifExpr>
+                <else>
+                  <body xsi:type="mtl:IfBlock">
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+                    <body xsi:type="ocl.ecore:PropertyCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                      </source>
+                      <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                    </body>
+                    <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}&#xA;"/>
+                    <ifExpr xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:PropertyCallExp">
+                          <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VariableTypeList"/>
+                          <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                          </source>
+                          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/variableType"/>
+                        </source>
+                      </source>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="default">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                    </ifExpr>
+                    <else>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&quot;"/>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//ChannelTypeList"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/channelType"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;: {&quot;timeUnit&quot;: &quot;"/>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/timeUnit"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;aggregate&quot;: &quot;"/>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//AggregateTypeList"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/aggregateType"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;field&quot;: &quot;"/>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/varibleName"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &quot;type&quot;: &quot;"/>
+                      <body xsi:type="ocl.ecore:PropertyCallExp">
+                        <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//VariableTypeList"/>
+                        <source xsi:type="ocl.ecore:VariableExp" name="E" referredVariable="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+                        </source>
+                        <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType/variableType"/>
+                      </body>
+                      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;}&#xA;"/>
+                    </else>
+                  </body>
+                </else>
+              </body>
+              <loopVariable name="E">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Encoding)">
+                <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/encoding"/>
+              </iterSet>
+              <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </each>
+            </body>
+          </else>
+        </body>
+        <loopVariable name="E">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(Encoding)">
+          <source xsi:type="ocl.ecore:VariableExp" name="M" referredVariable="/0/model2JSONSpecification/M">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark/encoding"/>
+        </iterSet>
+        <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </each>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}"/>
+      <parameter name="c">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+      </parameter>
+      <parameter name="M">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="equalsIgnoreCase">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateElement"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aDashboard">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="model2JSONSpecification">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/model2JSONSpecification"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="c">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+        </eParameters>
+        <eParameters name="M">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+      <eOperations name="toString">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="decisionDashboardMetaModel_Dashboard_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="decisionDashboardMetaModel_Visualization_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Visualization)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Mark)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Mark)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Data)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Data"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Encoding)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Encoding"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Mark"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Dashboard"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//channelType"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel#//Visualization"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateElement">
+      <details key="start" value="116"/>
+      <details key="end" value="1591"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateElement/%">
+      <details key="start" value="219"/>
+      <details key="end" value="1579"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateElement/%/%">
+      <details key="start" value="272"/>
+      <details key="end" value="1572"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateElement/%/%/%">
+      <details key="start" value="357"/>
+      <details key="end" value="971"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateElement/%/%/%.1">
+      <details key="start" value="972"/>
+      <details key="end" value="994"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateElement/%/%/%.1/aDashboard">
+      <details key="start" value="972"/>
+      <details key="end" value="982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateElement/%/%/%.2">
+      <details key="start" value="996"/>
+      <details key="end" value="997"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateElement/%/%/%.3">
+      <details key="start" value="998"/>
+      <details key="end" value="1001"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateElement/%/%/%.4">
+      <details key="start" value="1004"/>
+      <details key="end" value="1113"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateElement/%/%/%.5">
+      <details key="start" value="1114"/>
+      <details key="end" value="1130"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateElement/%/%/%.5/aDashboard">
+      <details key="start" value="1114"/>
+      <details key="end" value="1124"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateElement/%/%/%.6">
+      <details key="start" value="1132"/>
+      <details key="end" value="1133"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateElement/%/%/%.7">
+      <details key="start" value="1134"/>
+      <details key="end" value="1137"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateElement/%/%/%.8">
+      <details key="start" value="1140"/>
+      <details key="end" value="1202"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateElement/%/%/%.9">
+      <details key="start" value="1202"/>
+      <details key="end" value="1491"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateElement/%/%/%.9/%">
+      <details key="start" value="1228"/>
+      <details key="end" value="1244"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateElement/%/%/%.9/%.1">
+      <details key="start" value="1245"/>
+      <details key="end" value="1248"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateElement/%/%/%.9/%.2">
+      <details key="start" value="1251"/>
+      <details key="end" value="1263"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateElement/%/%/%.9/%.3">
+      <details key="start" value="1264"/>
+      <details key="end" value="1267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateElement/%/%/%.9/%.4">
+      <details key="start" value="1270"/>
+      <details key="end" value="1271"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateElement/%/%/%.9/%.5">
+      <details key="start" value="1272"/>
+      <details key="end" value="1348"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateElement/%/%/%.9/%.5/%">
+      <details key="start" value="1298"/>
+      <details key="end" value="1304"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateElement/%/%/%.9/%.5/%.1">
+      <details key="start" value="1305"/>
+      <details key="end" value="1333"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateElement/%/%/%.9/%.5/%.1/c">
+      <details key="start" value="1329"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateElement/%/%/%.9/%.5/%.1/M">
+      <details key="start" value="1331"/>
+      <details key="end" value="1332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateElement/%/%/%.9/%.5/%.2">
+      <details key="start" value="1335"/>
+      <details key="end" value="1341"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateElement/%/%/%.9/%.5/M">
+      <details key="start" value="1278"/>
+      <details key="end" value="1286"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateElement/%/%/%.9/%.5/%.3">
+      <details key="start" value="1289"/>
+      <details key="end" value="1295"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateElement/%/%/%.9/%.5/%.3/c">
+      <details key="start" value="1289"/>
+      <details key="end" value="1290"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateElement/%/%/%.9/%.6">
+      <details key="start" value="1349"/>
+      <details key="end" value="1350"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateElement/%/%/%.9/%.7">
+      <details key="start" value="1351"/>
+      <details key="end" value="1354"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateElement/%/%/%.9/%.8">
+      <details key="start" value="1357"/>
+      <details key="end" value="1405"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateElement/%/%/%.9/%.9">
+      <details key="start" value="1206"/>
+      <details key="end" value="1226"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateElement/%/%/%.9/%.9/%">
+      <details key="start" value="1208"/>
+      <details key="end" value="1222"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateElement/%/%/%.9/%.9/%/%">
+      <details key="start" value="1208"/>
+      <details key="end" value="1214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateElement/%/%/%.9/%.9/%/%/c">
+      <details key="start" value="1208"/>
+      <details key="end" value="1209"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateElement/%/%/%.9/%.9/%.1">
+      <details key="start" value="1223"/>
+      <details key="end" value="1224"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateElement/%/%/%.9/%.10">
+      <details key="start" value="1406"/>
+      <details key="end" value="1486"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateElement/%/%/%.9/%.10/%">
+      <details key="start" value="1415"/>
+      <details key="end" value="1484"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateElement/%/%/%.9/%.10/%/%">
+      <details key="start" value="1441"/>
+      <details key="end" value="1444"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateElement/%/%/%.9/%.10/%/%.1">
+      <details key="start" value="1445"/>
+      <details key="end" value="1473"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateElement/%/%/%.9/%.10/%/%.1/c">
+      <details key="start" value="1469"/>
+      <details key="end" value="1470"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateElement/%/%/%.9/%.10/%/%.1/M">
+      <details key="start" value="1471"/>
+      <details key="end" value="1472"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateElement/%/%/%.9/%.10/%/%.2">
+      <details key="start" value="1475"/>
+      <details key="end" value="1476"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateElement/%/%/%.9/%.10/%/M">
+      <details key="start" value="1421"/>
+      <details key="end" value="1429"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateElement/%/%/%.9/%.10/%/%.3">
+      <details key="start" value="1432"/>
+      <details key="end" value="1438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateElement/%/%/%.9/%.10/%/%.3/c">
+      <details key="start" value="1432"/>
+      <details key="end" value="1433"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateElement/%/%/%.10">
+      <details key="start" value="1492"/>
+      <details key="end" value="1565"/>
+      <details key="line" value="56"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateElement/%/%/%.11">
+      <details key="start" value="279"/>
+      <details key="end" value="338"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateElement/%/%/%.11/%">
+      <details key="start" value="279"/>
+      <details key="end" value="322"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateElement/%/%/%.11/%/%">
+      <details key="start" value="279"/>
+      <details key="end" value="307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateElement/%/%/%.11/%/%/%">
+      <details key="start" value="279"/>
+      <details key="end" value="295"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateElement/%/%/%.11/%/%/%/aDashboard">
+      <details key="start" value="279"/>
+      <details key="end" value="289"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateElement/%/%/%.11/%/%/%.1">
+      <details key="start" value="303"/>
+      <details key="end" value="306"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateElement/%/%/%.11/%/%.1">
+      <details key="start" value="315"/>
+      <details key="end" value="321"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateElement/%/%/%.11/%/%.1/c">
+      <details key="start" value="315"/>
+      <details key="end" value="316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateElement/%/%/%.11/%.1">
+      <details key="start" value="330"/>
+      <details key="end" value="337"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateElement/%/%/%.12">
+      <details key="start" value="347"/>
+      <details key="end" value="354"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateElement/%/c">
+      <details key="start" value="225"/>
+      <details key="end" value="242"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateElement/%/%.1">
+      <details key="start" value="245"/>
+      <details key="end" value="269"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateElement/%/%.1/aDashboard">
+      <details key="start" value="245"/>
+      <details key="end" value="255"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateElement/aDashboard">
+      <details key="start" value="149"/>
+      <details key="end" value="199"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/model2JSONSpecification">
+      <details key="start" value="1593"/>
+      <details key="end" value="4534"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/model2JSONSpecification/%">
+      <details key="start" value="1660"/>
+      <details key="end" value="1671"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/model2JSONSpecification/%.1">
+      <details key="start" value="1672"/>
+      <details key="end" value="1679"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/model2JSONSpecification/%.1/M">
+      <details key="start" value="1672"/>
+      <details key="end" value="1673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/model2JSONSpecification/%.2">
+      <details key="start" value="1681"/>
+      <details key="end" value="1682"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/model2JSONSpecification/%.3">
+      <details key="start" value="1683"/>
+      <details key="end" value="1686"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/model2JSONSpecification/%.4">
+      <details key="start" value="1689"/>
+      <details key="end" value="1708"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/model2JSONSpecification/collect">
+      <details key="start" value="1709"/>
+      <details key="end" value="1722"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/model2JSONSpecification/collect/%">
+      <details key="start" value="1709"/>
+      <details key="end" value="1715"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/model2JSONSpecification/collect/%/M">
+      <details key="start" value="1709"/>
+      <details key="end" value="1710"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/model2JSONSpecification/collect/%.1">
+      <details key="start" value="1716"/>
+      <details key="end" value="1722"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/model2JSONSpecification/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/model2JSONSpecification/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/model2JSONSpecification/%.5">
+      <details key="start" value="1724"/>
+      <details key="end" value="1728"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/model2JSONSpecification/%.6">
+      <details key="start" value="1729"/>
+      <details key="end" value="1732"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/model2JSONSpecification/%.7">
+      <details key="start" value="1735"/>
+      <details key="end" value="1753"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/model2JSONSpecification/%.8">
+      <details key="start" value="1754"/>
+      <details key="end" value="1791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/model2JSONSpecification/%.8/%">
+      <details key="start" value="1754"/>
+      <details key="end" value="1777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/model2JSONSpecification/%.8/%/%">
+      <details key="start" value="1754"/>
+      <details key="end" value="1766"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/model2JSONSpecification/%.8/%/%/M">
+      <details key="start" value="1754"/>
+      <details key="end" value="1755"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/model2JSONSpecification/%.9">
+      <details key="start" value="1793"/>
+      <details key="end" value="1794"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/model2JSONSpecification/%.10">
+      <details key="start" value="1795"/>
+      <details key="end" value="1798"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/model2JSONSpecification/%.11">
+      <details key="start" value="1801"/>
+      <details key="end" value="1818"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/model2JSONSpecification/%.12">
+      <details key="start" value="1819"/>
+      <details key="end" value="1822"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/model2JSONSpecification/%.13">
+      <details key="start" value="1825"/>
+      <details key="end" value="1826"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/model2JSONSpecification/%.14">
+      <details key="start" value="1826"/>
+      <details key="end" value="2756"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/model2JSONSpecification/%.14/%">
+      <details key="start" value="1864"/>
+      <details key="end" value="2749"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/model2JSONSpecification/%.14/%/%">
+      <details key="start" value="1920"/>
+      <details key="end" value="1921"/>
+      <details key="line" value="75"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/model2JSONSpecification/%.14/%/%.1">
+      <details key="start" value="1868"/>
+      <details key="end" value="1918"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/model2JSONSpecification/%.14/%/%.1/%">
+      <details key="start" value="1869"/>
+      <details key="end" value="1892"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/model2JSONSpecification/%.14/%/%.1/%/%">
+      <details key="start" value="1869"/>
+      <details key="end" value="1881"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/model2JSONSpecification/%.14/%/%.1/%/%/E">
+      <details key="start" value="1869"/>
+      <details key="end" value="1870"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/model2JSONSpecification/%.14/%/%.1/%.1">
+      <details key="start" value="1910"/>
+      <details key="end" value="1916"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/model2JSONSpecification/%.14/%/%.2">
+      <details key="start" value="1922"/>
+      <details key="end" value="2744"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/model2JSONSpecification/%.14/%/%.2/%">
+      <details key="start" value="1929"/>
+      <details key="end" value="1945"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/model2JSONSpecification/%.14/%/%.2/%.1">
+      <details key="start" value="1946"/>
+      <details key="end" value="1949"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/model2JSONSpecification/%.14/%/%.2/%.2">
+      <details key="start" value="1952"/>
+      <details key="end" value="1953"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/model2JSONSpecification/%.14/%/%.2/%.3">
+      <details key="start" value="1956"/>
+      <details key="end" value="2170"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%">
+      <details key="start" value="1998"/>
+      <details key="end" value="2160"/>
+      <details key="line" value="79"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%">
+      <details key="start" value="2055"/>
+      <details key="end" value="2075"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.1">
+      <details key="start" value="2076"/>
+      <details key="end" value="2086"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.1/E">
+      <details key="start" value="2076"/>
+      <details key="end" value="2077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.2">
+      <details key="start" value="2088"/>
+      <details key="end" value="2101"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.3">
+      <details key="start" value="2102"/>
+      <details key="end" value="2115"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.3/E">
+      <details key="start" value="2102"/>
+      <details key="end" value="2103"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.4">
+      <details key="start" value="2117"/>
+      <details key="end" value="2127"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.5">
+      <details key="start" value="2128"/>
+      <details key="end" value="2138"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.5/E">
+      <details key="start" value="2128"/>
+      <details key="end" value="2129"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.6">
+      <details key="start" value="2140"/>
+      <details key="end" value="2142"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.7">
+      <details key="start" value="2143"/>
+      <details key="end" value="2146"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.8">
+      <details key="start" value="2149"/>
+      <details key="end" value="2150"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.9">
+      <details key="start" value="2002"/>
+      <details key="end" value="2053"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.9/%">
+      <details key="start" value="2003"/>
+      <details key="end" value="2027"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.9/%/%">
+      <details key="start" value="2003"/>
+      <details key="end" value="2016"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.9/%/%/E">
+      <details key="start" value="2003"/>
+      <details key="end" value="2004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%/%.9/%.1">
+      <details key="start" value="2045"/>
+      <details key="end" value="2051"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/E">
+      <details key="start" value="1962"/>
+      <details key="end" value="1977"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%.1">
+      <details key="start" value="1980"/>
+      <details key="end" value="1990"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/model2JSONSpecification/%.14/%/%.2/%.3/%.1/M">
+      <details key="start" value="1980"/>
+      <details key="end" value="1981"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/model2JSONSpecification/%.14/%/%.2/%.4">
+      <details key="start" value="2171"/>
+      <details key="end" value="2190"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/model2JSONSpecification/%.14/%/%.2/%.5">
+      <details key="start" value="2191"/>
+      <details key="end" value="2194"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/model2JSONSpecification/%.14/%/%.2/%.6">
+      <details key="start" value="2197"/>
+      <details key="end" value="2205"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/model2JSONSpecification/%.14/%/%.2/%.7">
+      <details key="start" value="2206"/>
+      <details key="end" value="2221"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/model2JSONSpecification/%.14/%/%.2/%.7/E">
+      <details key="start" value="2206"/>
+      <details key="end" value="2207"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/model2JSONSpecification/%.14/%/%.2/%.8">
+      <details key="start" value="2223"/>
+      <details key="end" value="2236"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/model2JSONSpecification/%.14/%/%.2/%.9">
+      <details key="start" value="2237"/>
+      <details key="end" value="2250"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/model2JSONSpecification/%.14/%/%.2/%.9/E">
+      <details key="start" value="2237"/>
+      <details key="end" value="2238"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/model2JSONSpecification/%.14/%/%.2/%.10">
+      <details key="start" value="2252"/>
+      <details key="end" value="2262"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/model2JSONSpecification/%.14/%/%.2/%.11">
+      <details key="start" value="2263"/>
+      <details key="end" value="2276"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/model2JSONSpecification/%.14/%/%.2/%.11/E">
+      <details key="start" value="2263"/>
+      <details key="end" value="2264"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/model2JSONSpecification/%.14/%/%.2/%.12">
+      <details key="start" value="2278"/>
+      <details key="end" value="2280"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/model2JSONSpecification/%.14/%/%.2/%.13">
+      <details key="start" value="2281"/>
+      <details key="end" value="2284"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/model2JSONSpecification/%.14/%/%.2/%.14">
+      <details key="start" value="2288"/>
+      <details key="end" value="2291"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/model2JSONSpecification/%.14/%/%.2/%.15">
+      <details key="start" value="2294"/>
+      <details key="end" value="2320"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/model2JSONSpecification/%.14/%/%.2/%.16">
+      <details key="start" value="2321"/>
+      <details key="end" value="2324"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/model2JSONSpecification/%.14/%/%.2/%.17">
+      <details key="start" value="2327"/>
+      <details key="end" value="2328"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/model2JSONSpecification/%.14/%/%.2/%.18">
+      <details key="start" value="2333"/>
+      <details key="end" value="2622"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%">
+      <details key="start" value="2392"/>
+      <details key="end" value="2610"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%">
+      <details key="start" value="2449"/>
+      <details key="end" value="2457"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.1">
+      <details key="start" value="2458"/>
+      <details key="end" value="2468"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.1/E">
+      <details key="start" value="2458"/>
+      <details key="end" value="2459"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.2">
+      <details key="start" value="2470"/>
+      <details key="end" value="2471"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.3">
+      <details key="start" value="2472"/>
+      <details key="end" value="2475"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.4">
+      <details key="start" value="2478"/>
+      <details key="end" value="2479"/>
+      <details key="line" value="88"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.5">
+      <details key="start" value="2396"/>
+      <details key="end" value="2447"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.5/%">
+      <details key="start" value="2397"/>
+      <details key="end" value="2421"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.5/%/%">
+      <details key="start" value="2397"/>
+      <details key="end" value="2410"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.5/%/%/E">
+      <details key="start" value="2397"/>
+      <details key="end" value="2398"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.5/%.1">
+      <details key="start" value="2439"/>
+      <details key="end" value="2445"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6">
+      <details key="start" value="2486"/>
+      <details key="end" value="2605"/>
+      <details key="line" value="88"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%">
+      <details key="start" value="2501"/>
+      <details key="end" value="2598"/>
+      <details key="line" value="89"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%">
+      <details key="start" value="2557"/>
+      <details key="end" value="2567"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.1">
+      <details key="start" value="2568"/>
+      <details key="end" value="2581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.1/E">
+      <details key="start" value="2568"/>
+      <details key="end" value="2569"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.2">
+      <details key="start" value="2583"/>
+      <details key="end" value="2585"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.3">
+      <details key="start" value="2505"/>
+      <details key="end" value="2555"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.3/%">
+      <details key="start" value="2506"/>
+      <details key="end" value="2529"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.3/%/%">
+      <details key="start" value="2506"/>
+      <details key="end" value="2518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.3/%/%/E">
+      <details key="start" value="2506"/>
+      <details key="end" value="2507"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%/%.6/%/%.3/%.1">
+      <details key="start" value="2547"/>
+      <details key="end" value="2553"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/E">
+      <details key="start" value="2339"/>
+      <details key="end" value="2354"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%.1">
+      <details key="start" value="2357"/>
+      <details key="end" value="2367"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%.1/M">
+      <details key="start" value="2357"/>
+      <details key="end" value="2358"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/model2JSONSpecification/%.14/%/%.2/%.18/%.2">
+      <details key="start" value="2380"/>
+      <details key="end" value="2383"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/model2JSONSpecification/%.14/%/%.2/%.19">
+      <details key="start" value="2623"/>
+      <details key="end" value="2628"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/model2JSONSpecification/%.14/%/%.2/%.20">
+      <details key="start" value="2629"/>
+      <details key="end" value="2632"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/model2JSONSpecification/%.14/%/%.2/%.21">
+      <details key="start" value="2635"/>
+      <details key="end" value="2636"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/model2JSONSpecification/%.14/%/%.2/%.22">
+      <details key="start" value="2637"/>
+      <details key="end" value="2640"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/model2JSONSpecification/%.14/%/%.2/%.23">
+      <details key="start" value="2643"/>
+      <details key="end" value="2670"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/model2JSONSpecification/%.14/%/%.2/%.24">
+      <details key="start" value="2671"/>
+      <details key="end" value="2684"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/model2JSONSpecification/%.14/%/%.2/%.24/E">
+      <details key="start" value="2671"/>
+      <details key="end" value="2672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/model2JSONSpecification/%.14/%/%.2/%.25">
+      <details key="start" value="2686"/>
+      <details key="end" value="2690"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/model2JSONSpecification/%.14/%/%.2/%.26">
+      <details key="start" value="2691"/>
+      <details key="end" value="2703"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/model2JSONSpecification/%.14/%/%.2/%.26/E">
+      <details key="start" value="2691"/>
+      <details key="end" value="2692"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/model2JSONSpecification/%.14/%/%.2/%.27">
+      <details key="start" value="2705"/>
+      <details key="end" value="2708"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/model2JSONSpecification/%.14/%/%.2/%.28">
+      <details key="start" value="2709"/>
+      <details key="end" value="2722"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/model2JSONSpecification/%.14/%/%.2/%.28/E">
+      <details key="start" value="2709"/>
+      <details key="end" value="2710"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/model2JSONSpecification/%.14/%/%.2/%.29">
+      <details key="start" value="2724"/>
+      <details key="end" value="2728"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/model2JSONSpecification/%.14/%/%.2/%.30">
+      <details key="start" value="2729"/>
+      <details key="end" value="2732"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/model2JSONSpecification/%.14/%/%.2/%.31">
+      <details key="start" value="2736"/>
+      <details key="end" value="2739"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/model2JSONSpecification/%.14/%/%.2/%.32">
+      <details key="start" value="2742"/>
+      <details key="end" value="2743"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/model2JSONSpecification/%.14/E">
+      <details key="start" value="1832"/>
+      <details key="end" value="1847"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/model2JSONSpecification/%.14/%.1">
+      <details key="start" value="1850"/>
+      <details key="end" value="1860"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/model2JSONSpecification/%.14/%.1/M">
+      <details key="start" value="1850"/>
+      <details key="end" value="1851"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/model2JSONSpecification/%.15">
+      <details key="start" value="2757"/>
+      <details key="end" value="2772"/>
+      <details key="line" value="99"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/model2JSONSpecification/%.16">
+      <details key="start" value="2809"/>
+      <details key="end" value="4520"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/model2JSONSpecification/%.16/%">
+      <details key="start" value="2923"/>
+      <details key="end" value="4509"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/model2JSONSpecification/%.16/%/%">
+      <details key="start" value="3039"/>
+      <details key="end" value="3415"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/model2JSONSpecification/%.16/%/%/%">
+      <details key="start" value="3100"/>
+      <details key="end" value="3105"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/model2JSONSpecification/%.16/%/%/%.1">
+      <details key="start" value="3106"/>
+      <details key="end" value="3119"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/model2JSONSpecification/%.16/%/%/%.1/E">
+      <details key="start" value="3106"/>
+      <details key="end" value="3107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/model2JSONSpecification/%.16/%/%/%.2">
+      <details key="start" value="3121"/>
+      <details key="end" value="3138"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/model2JSONSpecification/%.16/%/%/%.3">
+      <details key="start" value="3139"/>
+      <details key="end" value="3149"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/model2JSONSpecification/%.16/%/%/%.3/E">
+      <details key="start" value="3139"/>
+      <details key="end" value="3140"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/model2JSONSpecification/%.16/%/%/%.4">
+      <details key="start" value="3151"/>
+      <details key="end" value="3152"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/model2JSONSpecification/%.16/%/%/%.5">
+      <details key="start" value="3153"/>
+      <details key="end" value="3156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/model2JSONSpecification/%.16/%/%/%.6">
+      <details key="start" value="3159"/>
+      <details key="end" value="3174"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/model2JSONSpecification/%.16/%/%/%.7">
+      <details key="start" value="3175"/>
+      <details key="end" value="3190"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/model2JSONSpecification/%.16/%/%/%.7/E">
+      <details key="start" value="3175"/>
+      <details key="end" value="3176"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/model2JSONSpecification/%.16/%/%/%.8">
+      <details key="start" value="3192"/>
+      <details key="end" value="3193"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/model2JSONSpecification/%.16/%/%/%.9">
+      <details key="start" value="3194"/>
+      <details key="end" value="3197"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/model2JSONSpecification/%.16/%/%/%.10">
+      <details key="start" value="3200"/>
+      <details key="end" value="3211"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/model2JSONSpecification/%.16/%/%/%.11">
+      <details key="start" value="3212"/>
+      <details key="end" value="3225"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/model2JSONSpecification/%.16/%/%/%.11/E">
+      <details key="start" value="3212"/>
+      <details key="end" value="3213"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/model2JSONSpecification/%.16/%/%/%.12">
+      <details key="start" value="3227"/>
+      <details key="end" value="3230"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/model2JSONSpecification/%.16/%/%/%.13">
+      <details key="start" value="3043"/>
+      <details key="end" value="3098"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/model2JSONSpecification/%.16/%/%/%.13/%">
+      <details key="start" value="3044"/>
+      <details key="end" value="3069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/model2JSONSpecification/%.16/%/%/%.13/%/%">
+      <details key="start" value="3044"/>
+      <details key="end" value="3058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/model2JSONSpecification/%.16/%/%/%.13/%/%/E">
+      <details key="start" value="3044"/>
+      <details key="end" value="3045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/model2JSONSpecification/%.16/%/%/%.13/%.1">
+      <details key="start" value="3087"/>
+      <details key="end" value="3096"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/model2JSONSpecification/%.16/%/%/%.14">
+      <details key="start" value="3234"/>
+      <details key="end" value="3410"/>
+      <details key="line" value="108"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/model2JSONSpecification/%.16/%/%/%.14/%">
+      <details key="start" value="3241"/>
+      <details key="end" value="3247"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.1">
+      <details key="start" value="3248"/>
+      <details key="end" value="3261"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.1/E">
+      <details key="start" value="3248"/>
+      <details key="end" value="3249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.2">
+      <details key="start" value="3263"/>
+      <details key="end" value="3280"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.3">
+      <details key="start" value="3281"/>
+      <details key="end" value="3291"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.3/E">
+      <details key="start" value="3281"/>
+      <details key="end" value="3282"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.4">
+      <details key="start" value="3293"/>
+      <details key="end" value="3294"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.5">
+      <details key="start" value="3295"/>
+      <details key="end" value="3298"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.6">
+      <details key="start" value="3301"/>
+      <details key="end" value="3316"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.7">
+      <details key="start" value="3317"/>
+      <details key="end" value="3332"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.7/E">
+      <details key="start" value="3317"/>
+      <details key="end" value="3318"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.8">
+      <details key="start" value="3334"/>
+      <details key="end" value="3335"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.9">
+      <details key="start" value="3336"/>
+      <details key="end" value="3339"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.10">
+      <details key="start" value="3342"/>
+      <details key="end" value="3353"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.11">
+      <details key="start" value="3354"/>
+      <details key="end" value="3367"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.11/E">
+      <details key="start" value="3354"/>
+      <details key="end" value="3355"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.12">
+      <details key="start" value="3369"/>
+      <details key="end" value="3370"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.13">
+      <details key="start" value="3371"/>
+      <details key="end" value="3374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.14">
+      <details key="start" value="3377"/>
+      <details key="end" value="3387"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.15">
+      <details key="start" value="3388"/>
+      <details key="end" value="3402"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.233" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.15/E">
+      <details key="start" value="3388"/>
+      <details key="end" value="3389"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.234" references="/0/model2JSONSpecification/%.16/%/%/%.14/%.16">
+      <details key="start" value="3404"/>
+      <details key="end" value="3407"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/model2JSONSpecification/%.16/%/%.1">
+      <details key="start" value="2927"/>
+      <details key="end" value="2977"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/model2JSONSpecification/%.16/%/%.1/%">
+      <details key="start" value="2928"/>
+      <details key="end" value="2951"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/model2JSONSpecification/%.16/%/%.1/%/%">
+      <details key="start" value="2928"/>
+      <details key="end" value="2940"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/model2JSONSpecification/%.16/%/%.1/%/%/E">
+      <details key="start" value="2928"/>
+      <details key="end" value="2929"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/model2JSONSpecification/%.16/%/%.1/%.1">
+      <details key="start" value="2969"/>
+      <details key="end" value="2975"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/model2JSONSpecification/%.16/%/%.2">
+      <details key="start" value="3418"/>
+      <details key="end" value="4504"/>
+      <details key="line" value="111"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/model2JSONSpecification/%.16/%/%.2/%">
+      <details key="start" value="3428"/>
+      <details key="end" value="4500"/>
+      <details key="line" value="112"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/model2JSONSpecification/%.16/%/%.2/%/%">
+      <details key="start" value="3484"/>
+      <details key="end" value="4487"/>
+      <details key="line" value="113"/>
+    </eAnnotations>
+    <eAnnotations source="positions.243" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%">
+      <details key="start" value="3598"/>
+      <details key="end" value="4013"/>
+      <details key="line" value="115"/>
+    </eAnnotations>
+    <eAnnotations source="positions.244" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%">
+      <details key="start" value="3659"/>
+      <details key="end" value="3666"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.245" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.1">
+      <details key="start" value="3667"/>
+      <details key="end" value="3680"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.1/E">
+      <details key="start" value="3667"/>
+      <details key="end" value="3668"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.2">
+      <details key="start" value="3682"/>
+      <details key="end" value="3700"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.3">
+      <details key="start" value="3701"/>
+      <details key="end" value="3704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.249" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.4">
+      <details key="start" value="3707"/>
+      <details key="end" value="3722"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.250" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.5">
+      <details key="start" value="3723"/>
+      <details key="end" value="3738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.251" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.5/E">
+      <details key="start" value="3723"/>
+      <details key="end" value="3724"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.6">
+      <details key="start" value="3740"/>
+      <details key="end" value="3741"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.253" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.7">
+      <details key="start" value="3742"/>
+      <details key="end" value="3745"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.8">
+      <details key="start" value="3748"/>
+      <details key="end" value="3759"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.9">
+      <details key="start" value="3760"/>
+      <details key="end" value="3770"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.9/E">
+      <details key="start" value="3760"/>
+      <details key="end" value="3761"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.10">
+      <details key="start" value="3772"/>
+      <details key="end" value="3807"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.11">
+      <details key="start" value="3602"/>
+      <details key="end" value="3657"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.11/%">
+      <details key="start" value="3603"/>
+      <details key="end" value="3628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.11/%/%">
+      <details key="start" value="3603"/>
+      <details key="end" value="3617"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.11/%/%/E">
+      <details key="start" value="3603"/>
+      <details key="end" value="3604"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.11/%.1">
+      <details key="start" value="3646"/>
+      <details key="end" value="3655"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.263" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12">
+      <details key="start" value="3813"/>
+      <details key="end" value="4008"/>
+      <details key="line" value="117"/>
+    </eAnnotations>
+    <eAnnotations source="positions.264" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%">
+      <details key="start" value="3820"/>
+      <details key="end" value="3828"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.1">
+      <details key="start" value="3829"/>
+      <details key="end" value="3842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.1/E">
+      <details key="start" value="3829"/>
+      <details key="end" value="3830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.2">
+      <details key="start" value="3844"/>
+      <details key="end" value="3862"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.268" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.3">
+      <details key="start" value="3863"/>
+      <details key="end" value="3866"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.269" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.4">
+      <details key="start" value="3869"/>
+      <details key="end" value="3884"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.270" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.5">
+      <details key="start" value="3885"/>
+      <details key="end" value="3900"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.271" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.5/E">
+      <details key="start" value="3885"/>
+      <details key="end" value="3886"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.272" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.6">
+      <details key="start" value="3902"/>
+      <details key="end" value="3903"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.273" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.7">
+      <details key="start" value="3904"/>
+      <details key="end" value="3907"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.274" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.8">
+      <details key="start" value="3910"/>
+      <details key="end" value="3921"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.275" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.9">
+      <details key="start" value="3922"/>
+      <details key="end" value="3935"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.276" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.9/E">
+      <details key="start" value="3922"/>
+      <details key="end" value="3923"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.277" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.10">
+      <details key="start" value="3937"/>
+      <details key="end" value="3938"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.278" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.11">
+      <details key="start" value="3939"/>
+      <details key="end" value="3942"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.279" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.12">
+      <details key="start" value="3945"/>
+      <details key="end" value="3955"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.280" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.13">
+      <details key="start" value="3956"/>
+      <details key="end" value="3966"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.281" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.13/E">
+      <details key="start" value="3956"/>
+      <details key="end" value="3957"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.282" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%/%.12/%.14">
+      <details key="start" value="3968"/>
+      <details key="end" value="4003"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.283" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.1">
+      <details key="start" value="3488"/>
+      <details key="end" value="3539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.284" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.1/%">
+      <details key="start" value="3489"/>
+      <details key="end" value="3513"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.285" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.1/%/%">
+      <details key="start" value="3489"/>
+      <details key="end" value="3502"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.286" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.1/%/%/E">
+      <details key="start" value="3489"/>
+      <details key="end" value="3490"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.287" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.1/%.1">
+      <details key="start" value="3531"/>
+      <details key="end" value="3537"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.288" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2">
+      <details key="start" value="4075"/>
+      <details key="end" value="4482"/>
+      <details key="line" value="121"/>
+    </eAnnotations>
+    <eAnnotations source="positions.289" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%">
+      <details key="start" value="4088"/>
+      <details key="end" value="4476"/>
+      <details key="line" value="122"/>
+    </eAnnotations>
+    <eAnnotations source="positions.290" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%">
+      <details key="start" value="4149"/>
+      <details key="end" value="4157"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.291" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.1">
+      <details key="start" value="4158"/>
+      <details key="end" value="4171"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.292" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.1/E">
+      <details key="start" value="4158"/>
+      <details key="end" value="4159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.293" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.2">
+      <details key="start" value="4173"/>
+      <details key="end" value="4190"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.294" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.3">
+      <details key="start" value="4191"/>
+      <details key="end" value="4201"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.295" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.3/E">
+      <details key="start" value="4191"/>
+      <details key="end" value="4192"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.296" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.4">
+      <details key="start" value="4203"/>
+      <details key="end" value="4204"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.297" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.5">
+      <details key="start" value="4205"/>
+      <details key="end" value="4208"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.298" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.6">
+      <details key="start" value="4211"/>
+      <details key="end" value="4226"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.299" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.7">
+      <details key="start" value="4227"/>
+      <details key="end" value="4242"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.300" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.7/E">
+      <details key="start" value="4227"/>
+      <details key="end" value="4228"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.301" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.8">
+      <details key="start" value="4244"/>
+      <details key="end" value="4245"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.302" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.9">
+      <details key="start" value="4246"/>
+      <details key="end" value="4249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.303" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.10">
+      <details key="start" value="4252"/>
+      <details key="end" value="4263"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.304" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.11">
+      <details key="start" value="4264"/>
+      <details key="end" value="4277"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.305" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.11/E">
+      <details key="start" value="4264"/>
+      <details key="end" value="4265"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.306" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.12">
+      <details key="start" value="4279"/>
+      <details key="end" value="4282"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.307" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.13">
+      <details key="start" value="4092"/>
+      <details key="end" value="4147"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.308" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.13/%">
+      <details key="start" value="4093"/>
+      <details key="end" value="4118"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.309" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.13/%/%">
+      <details key="start" value="4093"/>
+      <details key="end" value="4107"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.310" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.13/%/%/E">
+      <details key="start" value="4093"/>
+      <details key="end" value="4094"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.311" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.13/%.1">
+      <details key="start" value="4136"/>
+      <details key="end" value="4145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.312" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14">
+      <details key="start" value="4289"/>
+      <details key="end" value="4471"/>
+      <details key="line" value="124"/>
+    </eAnnotations>
+    <eAnnotations source="positions.313" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%">
+      <details key="start" value="4296"/>
+      <details key="end" value="4305"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.314" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.1">
+      <details key="start" value="4306"/>
+      <details key="end" value="4319"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.315" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.1/E">
+      <details key="start" value="4306"/>
+      <details key="end" value="4307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.316" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.2">
+      <details key="start" value="4321"/>
+      <details key="end" value="4338"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.317" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.3">
+      <details key="start" value="4339"/>
+      <details key="end" value="4349"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.318" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.3/E">
+      <details key="start" value="4339"/>
+      <details key="end" value="4340"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.319" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.4">
+      <details key="start" value="4351"/>
+      <details key="end" value="4352"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.320" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.5">
+      <details key="start" value="4353"/>
+      <details key="end" value="4356"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.321" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.6">
+      <details key="start" value="4359"/>
+      <details key="end" value="4374"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.322" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.7">
+      <details key="start" value="4375"/>
+      <details key="end" value="4390"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.323" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.7/E">
+      <details key="start" value="4375"/>
+      <details key="end" value="4376"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.324" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.8">
+      <details key="start" value="4392"/>
+      <details key="end" value="4393"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.325" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.9">
+      <details key="start" value="4394"/>
+      <details key="end" value="4397"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.326" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.10">
+      <details key="start" value="4400"/>
+      <details key="end" value="4411"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.327" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.11">
+      <details key="start" value="4412"/>
+      <details key="end" value="4425"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.328" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.11/E">
+      <details key="start" value="4412"/>
+      <details key="end" value="4413"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.329" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.12">
+      <details key="start" value="4427"/>
+      <details key="end" value="4428"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.330" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.13">
+      <details key="start" value="4429"/>
+      <details key="end" value="4432"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.331" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.14">
+      <details key="start" value="4435"/>
+      <details key="end" value="4445"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.332" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.15">
+      <details key="start" value="4446"/>
+      <details key="end" value="4460"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.333" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.15/E">
+      <details key="start" value="4446"/>
+      <details key="end" value="4447"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.334" references="/0/model2JSONSpecification/%.16/%/%.2/%/%/%.2/%/%.14/%.16">
+      <details key="start" value="4462"/>
+      <details key="end" value="4465"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.335" references="/0/model2JSONSpecification/%.16/%/%.2/%/E">
+      <details key="start" value="3434"/>
+      <details key="end" value="3449"/>
+      <details key="line" value="112"/>
+    </eAnnotations>
+    <eAnnotations source="positions.336" references="/0/model2JSONSpecification/%.16/%/%.2/%/%.1">
+      <details key="start" value="3452"/>
+      <details key="end" value="3462"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.337" references="/0/model2JSONSpecification/%.16/%/%.2/%/%.1/M">
+      <details key="start" value="3452"/>
+      <details key="end" value="3453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.338" references="/0/model2JSONSpecification/%.16/%/%.2/%/%.2">
+      <details key="start" value="3474"/>
+      <details key="end" value="3477"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.339" references="/0/model2JSONSpecification/%.16/E">
+      <details key="start" value="2815"/>
+      <details key="end" value="2830"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.340" references="/0/model2JSONSpecification/%.16/%.1">
+      <details key="start" value="2833"/>
+      <details key="end" value="2843"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.341" references="/0/model2JSONSpecification/%.16/%.1/M">
+      <details key="start" value="2833"/>
+      <details key="end" value="2834"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.342" references="/0/model2JSONSpecification/%.16/%.2">
+      <details key="start" value="2855"/>
+      <details key="end" value="2858"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.343" references="/0/model2JSONSpecification/%.17">
+      <details key="start" value="4521"/>
+      <details key="end" value="4522"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.344" references="/0/model2JSONSpecification/c">
+      <details key="start" value="1634"/>
+      <details key="end" value="1649"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.345" references="/0/model2JSONSpecification/M">
+      <details key="start" value="1651"/>
+      <details key="end" value="1657"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
