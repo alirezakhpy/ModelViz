@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="decisionDashboardMetaModel" nsURI="http://www.eclipse.org/sirius/sample/decisionDashboardMetaModel"
+    nsPrefix="decisionDashboardMetaModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Dashboard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" lowerBound="1"
+        upperBound="-1" eType="#//Visualization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisionarea" lowerBound="1"
+        upperBound="-1" eType="#//DecisionArea" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Visualization">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mark" lowerBound="1" upperBound="-1"
+        eType="#//Mark" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" upperBound="-1"
+        eType="#//Data" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vatask" lowerBound="1"
+        upperBound="-1" eType="#//VATask" eOpposite="#//VATask/visualization"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisionarea" lowerBound="1"
+        upperBound="-1" eType="#//DecisionArea" eOpposite="#//DecisionArea/visualization"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mlmodel" upperBound="-1"
+        eType="#//MLModel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionArea">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Dtype" eType="#//DecisionAreaList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualizationgoal" lowerBound="1"
+        upperBound="-1" eType="#//VisualizationGoal" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" lowerBound="1"
+        upperBound="-1" eType="#//Visualization" eOpposite="#//Visualization/decisionarea"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mark">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encoding" lowerBound="2"
+        upperBound="4" eType="#//Encoding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" upperBound="-1"
+        eType="#//Data" eOpposite="#//Data/mark"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visualType" eType="#//VisualFormatList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vatask" lowerBound="1"
+        upperBound="-1" eType="#//VATask" eOpposite="#//VATask/mark"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bar" eSuperTypes="#//Mark">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//Mark">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//Values" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mark" lowerBound="1" upperBound="-1"
+        eType="#//Mark" eOpposite="#//Mark/data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Values">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StoreName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kommuneNo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CountyNo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WeekDay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ProductID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ProductUnitPrice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DayOfYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WeekOfYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="QuarterOfYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WeekEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PostNo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Avgturnover" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShopProfileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Profile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expanding_mean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lag_1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualizationGoal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goalType" eType="#//VAGoalTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vatask" lowerBound="1"
+        upperBound="-1" eType="#//VATask" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VATask">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="taskType" eType="#//VATaskTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visualization" lowerBound="1"
+        upperBound="-1" eType="#//Visualization" eOpposite="#//Visualization/vatask"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mark" lowerBound="1" upperBound="-1"
+        eType="#//Mark" eOpposite="#//Mark/vatask"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Encoding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DecisionAreaList">
+    <eLiterals name="Sales_Management" literal="Sales_Management"/>
+    <eLiterals name="Demand_Managament" value="1"/>
+    <eLiterals name="Network_Integration_And_Visibility" value="2"/>
+    <eLiterals name="Production_And_Distribution_Planning" value="3"/>
+    <eLiterals name="Transportation_Management_NextVersion" value="4" literal="Transportation_Management_NextVersion"/>
+    <eLiterals name="Operation_Managamenet_NextVersion" value="5"/>
+    <eLiterals name="Business_Circle_Processes_NextVersion" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VAGoalTypeList">
+    <eLiterals name="Identifying_Underlying_Pattern_By_Partitioning"/>
+    <eLiterals name="Viewing_Data_From_Single_Variable_Point_Of_View" value="2"/>
+    <eLiterals name="Exploring_Dimension_By_Dividing_To_Intervals" value="4"/>
+    <eLiterals name="Finding_Relations_Between_Data_Records" value="5"/>
+    <eLiterals name="Exploring_time_dependant_multivariate_data" value="6"/>
+    <eLiterals name="Finding_relationship_between_variables_by_correlation_analysis_and_stepwise_regression_NextVersion"
+        value="7"/>
+    <eLiterals name="Geographic_information_visualization_NextVersion" value="8"/>
+    <eLiterals name="What_if_analysis_based_on_scenario_based_techniques_NextVersion"
+        value="9"/>
+    <eLiterals name="Demonstrate_risk_distribution_in_the_network_NextVersion" value="10"/>
+    <eLiterals name="Detecting_inconsistencies_by_association_rule_mining_NextVersion"
+        value="12"/>
+    <eLiterals name="Analyzing_social_media_data_for_product_recall_NextVersion" value="13"/>
+    <eLiterals name="Visualizing_multi_dimensionality_by_clustering_NextVersion" value="14"/>
+    <eLiterals name="Dimensionality_Reduction_NextVersion" value="15"/>
+    <eLiterals name="Correlation_Analysis_NextVersion" value="16"/>
+    <eLiterals name="Exploring_Spatio_Temporality_NextVersion" value="15"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VATaskTypeList">
+    <eLiterals name="Distribution_Over_Temporal_Dimension_By_Emphasizing_On_Individual_Values_For_Trend_Detection"/>
+    <eLiterals name="Similarity_View_Showing_Similar_Historical_Data" value="4"/>
+    <eLiterals name="Providing_detail_view_Of_Individual_Variables" value="5"/>
+    <eLiterals name="Providing_An_Overall_Insight_About_The_Data" value="6"/>
+    <eLiterals name="Exploring_Filter_Coordination" value="7"/>
+    <eLiterals name="Visualizing_Single_Dimensions" value="8"/>
+    <eLiterals name="Visualizing_A_Categorical_Dimension_Against_A_Numerical" value="9"/>
+    <eLiterals name="Visualizing_Two_Numerical_Dimensions" value="10"/>
+    <eLiterals name="Show_Dependency_Of_An_Attribute_To_Time" value="11"/>
+    <eLiterals name="Show_Density_Of_The_Data" value="12"/>
+    <eLiterals name="Comparing_Pattern_Accross_Different_Subsets_NextVersion" value="13"/>
+    <eLiterals name="Product_Flow_Aggregation_And_Visualizing_Problematic_Areas_By_Identifying_Potential_Issues_NextVersion"
+        value="13"/>
+    <eLiterals name="Presenting_A_Dimension_Uppon_Different_Degrees_Of_Target_Variable_NextVersion"
+        value="14"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataTypeList">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eLiterals name="Point_Of_Sales">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Retail_Transaction" value="1"/>
+    <eLiterals name="Monthly_Demand" value="2"/>
+    <eLiterals name="Warehouse_Data" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisualFormatList">
+    <eLiterals name="Bar"/>
+    <eLiterals name="Line" value="1"/>
+    <eLiterals name="Histogram" value="2"/>
+    <eLiterals name="Circle" value="3"/>
+    <eLiterals name="Square" value="5"/>
+    <eLiterals name="Point_NextVersion" value="5"/>
+    <eLiterals name="Tree_View_NextVersion" value="6"/>
+    <eLiterals name="Bubble_Map_NextVersion" value="7"/>
+    <eLiterals name="Ring_Diagram_NextVersion" value="8"/>
+    <eLiterals name="Theme_Rivers_NextVersion" value="9"/>
+    <eLiterals name="Force_Directed_Graph_NextVersion" value="10"/>
+    <eLiterals name="Heat_Map_NextVersion" value="11"/>
+    <eLiterals name="Area" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="channelType" eSuperTypes="#//Encoding">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channelType" eType="#//ChannelTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varibleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableType" eType="#//VariableTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregateType" eType="#//AggregateTypeList"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterType" eType="#//FilterTypeList"
+        defaultValueLiteral="none"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableTypeList">
+    <eLiterals name="default" value="4"/>
+    <eLiterals name="ordinal" value="5"/>
+    <eLiterals name="nominal" value="5"/>
+    <eLiterals name="quantitative" value="6"/>
+    <eLiterals name="temporal" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AggregateTypeList">
+    <eLiterals name="none"/>
+    <eLiterals name="sum" value="1"/>
+    <eLiterals name="mean" value="2"/>
+    <eLiterals name="min" value="3"/>
+    <eLiterals name="max" value="4"/>
+    <eLiterals name="median" value="5"/>
+    <eLiterals name="distinct" value="6"/>
+    <eLiterals name="variance" value="7"/>
+    <eLiterals name="count" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChannelTypeList">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eLiterals name="x"/>
+    <eLiterals name="y" value="2"/>
+    <eLiterals name="color" value="2"/>
+    <eLiterals name="size" value="3"/>
+    <eLiterals name="xOffset" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MLModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ModelType" eType="#//ModelTypeList"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ModelTypeList">
+    <eLiterals name="XGBoost"/>
+    <eLiterals name="Random_Forest_NextVersion" value="1"/>
+    <eLiterals name="Neural_Network_NextVersion" value="2"/>
+    <eLiterals name="Support_Vecor_NextVersion" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FilterTypeList">
+    <eLiterals name="equal"/>
+    <eLiterals name="lt" value="1"/>
+    <eLiterals name="lte" value="2"/>
+    <eLiterals name="gt" value="3"/>
+    <eLiterals name="gte" value="4"/>
+    <eLiterals name="range" value="5"/>
+    <eLiterals name="oneOf" value="6"/>
+    <eLiterals name="none" value="7"/>
+  </eClassifiers>
+</ecore:EPackage>
