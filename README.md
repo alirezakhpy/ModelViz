@@ -6,7 +6,7 @@ ModelViz a prototype tool that automates the generation of visual analytics dash
 
 THe ModelVis is created as part of the PhD project at Østfold Univeristy College, NORWAY.
 
-# Instruction to install the tool
+# Instruction to install and use the tool
 1. Download and Install the Obeo Designer Package from https://www.obeodesigner.com/en/download.
 2. Choose the Ecore viepoint on the top-right hand side of the window.
 3. Download all the files from the repository.
