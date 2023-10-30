@@ -1,5 +1,5 @@
 # ModelViz
-ModelViz a prototype tool that automates the generation of visual analytics dashboard code for supply chain management applications. ModelViz consists of three parts:
+ModelViz is a prototype tool that automates the generation of visual analytics dashboard code for supply chain management applications. ModelViz consists of three parts:
 1. A Metamodel created using Eclipse Modeling Framework (EMF).
 2. An Eclipse Sirius graphical workbench for creating models that facilitates the interaction with the metamodel.
 3. An Eclipse Acceleo Model-To-Text transformer that is a code template and creates dashboard codes from the model.
